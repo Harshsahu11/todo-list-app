@@ -5,6 +5,7 @@ function App() {
   let [toDoList, setToDoList] = useState([]);
   
   let saveToDoList = (e) => {
+    e.preventDefault();
     let toName = e.target.toName.value;
     
     if(toDoList.includes(toName)){
@@ -14,7 +15,7 @@ function App() {
     setToDoList([...toDoList, toName]);
     input.value = "";
     alert("Task added");
-    e.preventDefault();
+    
   }
   let list = toDoList.map((value, index) => {
     return (
